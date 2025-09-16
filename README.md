@@ -1,98 +1,144 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Starter Auth API</title>
+  <style>
+    body {
+      font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.6;
+      margin: 2rem auto;
+      max-width: 800px;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    code, pre {
+      background: #f4f4f4;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    pre {
+      padding: 10px;
+      overflow-x: auto;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .jp {
+      color: #555;
+      font-style: italic;
+    }
+    ul {
+      list-style: "✨ ";
+      padding-left: 1.2em;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9em;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Starter Auth API 🚀</h1>
+  <p>
+    <strong>NestJS + Prisma + PostgreSQL</strong> simple starter API with JWT-based authentication.<br />
+    <span class="jp">ネストジェーエス と ぷりずま + ぽすとぐれえすきゅーえる を りようした、ジェーダブリューティー にんしょうつきの しんぷるな すたーたー API。</span>
+  </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+  <div class="section">
+    <h2>✨ Features / <span class="jp">きのう</span></h2>
+    <ul>
+      <li>Register new user (<code>/auth/register</code>)<br /><span class="jp">しんき ゆーざー とうろく</span></li>
+      <li>Login returns JWT (<code>/auth/login</code>)<br /><span class="jp">ろぐいん で ジェーダブリューティー を かえす</span></li>
+      <li>Protected route (<code>/me</code>)<br /><span class="jp">ジェーダブリューティー がーど つきの ほご るーと</span></li>
+    </ul>
+  </div>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  <div class="section">
+    <h2>🛠️ Tech Stack / <span class="jp">しようぎじゅつ</span></h2>
+    <ul>
+      <li>NestJS – backend framework</li>
+      <li>Prisma – ORM</li>
+      <li>PostgreSQL – database</li>
+      <li>Docker Compose – local DB setup</li>
+      <li>JWT – authentication</li>
+    </ul>
+  </div>
 
-## Description
+  <div class="section">
+    <h2>⚙️ Setup / <span class="jp">せっとあっぷ</span></h2>
+    <pre><code># 1. Clone & install
+git clone https://github.com/ryuken25/starter-auth-api.git
+cd starter-auth-api
+npm install
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# 2. Copy environment file
+cp .env.example .env
 
-## Project setup
+# 3. Run PostgreSQL with Docker
+docker compose up -d
 
-```bash
-$ npm install
-```
+# 4. Push Prisma schema
+npx prisma db push
 
-## Compile and run the project
+# 5. Start API
+npm run start:dev
+</code></pre>
+  </div>
 
-```bash
-# development
-$ npm run start
+  <div class="section">
+    <h2>📡 API Endpoints / <span class="jp">API えんどぽいんと</span></h2>
 
-# watch mode
-$ npm run start:dev
+    <h3>Register / <span class="jp">とうろく</span></h3>
+    <pre><code>POST /auth/register
+{
+  "email": "demo@example.com",
+  "password": "password123"
+}</code></pre>
 
-# production mode
-$ npm run start:prod
-```
+    <h3>Login / <span class="jp">ろぐいん</span></h3>
+    <pre><code>POST /auth/login
+{
+  "email": "demo@example.com",
+  "password": "password123"
+}
 
-## Run tests
+Response:
+{
+  "access_token": "eyJhbGciOiJI..."
+}</code></pre>
 
-```bash
-# unit tests
-$ npm run test
+    <h3>Me (Protected) / <span class="jp">じぶんのじょうほう</span></h3>
+    <pre><code>GET /me
+Header: Authorization: Bearer &lt;access_token&gt;
 
-# e2e tests
-$ npm run test:e2e
+Response:
+{
+  "userId": "clxyz123",
+  "email": "demo@example.com"
+}</code></pre>
+  </div>
 
-# test coverage
-$ npm run test:cov
-```
+  <div class="section">
+    <h2>✅ Roadmap / <span class="jp">よてい</span></h2>
+    <ul>
+      <li>[x] JWT Register/Login</li>
+      <li>[x] /me protected route</li>
+      <li>[ ] Health check endpoint (/healthz)</li>
+      <li>[ ] Unit & Integration tests</li>
+      <li>[ ] CI with GitHub Actions</li>
+      <li>[ ] Refresh token & logout</li>
+    </ul>
+  </div>
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+  <footer>
+    📖 License: MIT License<br />
+    <em>Updated: 2025-09-17</em><br />
+    <span class="jp">つぎの きのう を ついかしたときに、この README を こうしん していきます。</span>
+  </footer>
+</body>
+</html>
